@@ -65,9 +65,15 @@
           <%= package.item %>
         </div>
 
-        <div>
-          Supposed to arrive on <%= package.arrival_date %>
-        </div>
+        <% if Date.today - package.arrival_date >= 3 %>
+          <div class="late">
+            Supposed to arrive on <%= package.arrival_date %>
+          </div>
+        <% else %>
+          <div>
+            Supposed to arrive on <%= package.arrival_date %>
+          </div>
+        <% end %>
 
         <div>
           <%= package.details %>

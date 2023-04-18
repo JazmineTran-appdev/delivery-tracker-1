@@ -12,3 +12,23 @@
  *
  *= require_self
  */
+
+.waiting_on {
+  background-color: lightgoldenrodyellow;
+}
+
+.late {
+  color: red;
+}
+
+.received {
+  background-color: lightgreen;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
+}
