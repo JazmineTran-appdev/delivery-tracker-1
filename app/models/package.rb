@@ -12,4 +12,9 @@
 #  user_id      :integer
 #
 class Package < ApplicationRecord
+  belongs_to :user
+
+  validates :item, :presence => true
+  validates :arrival_date, :presence => true
+
 end

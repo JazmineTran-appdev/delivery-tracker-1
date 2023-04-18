@@ -55,6 +55,42 @@
 
 <hr>
 
+<div class="waiting_on">
+  <h2>Waiting on</h2>
 
+  <ul>
+    <% @waiting_on.each do |package| %>
+      <li>
+        <div>
+          <%= package.item %>
+        </div>
+
+        <div>
+          Supposed to arrive on <%= package.arrival_date %>
+        </div>
+
+        <div>
+          <%= package.details %>
+        </div>
+
+        <div>
+          <form action="/modify_package/<%= package.id %>" method="post">
+            <input type="hidden" id="package_status" name="query_item" value="<%= package.item %>">
+
+            <input type="hidden" id="arrival date" name="query_arrival_date" value="<%= package.arrival_date %>">
+
+            <input type="hidden" id="details" name="query_details" value="<%= package.details %>">
+
+            <input type="hidden" id="status" name="query_status" value="received">
+
+            <input type="hidden" id="user" name="query_user_id" value="<%= @current_user.id %>">
+
+            <button>Mark as recieved</button>
+          </form>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <hr>

@@ -4,6 +4,8 @@ class PackagesController < ApplicationController
 
     @list_of_packages = matching_packages.order({ :created_at => :desc })
 
+    @waiting_on = @list_of_packages.where({ :status => "waiting_on" })
+
     render({ :template => "packages/index.html.erb" })
   end
 
