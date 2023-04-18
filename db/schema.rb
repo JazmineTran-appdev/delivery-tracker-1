@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_18_142943) do
+ActiveRecord::Schema.define(version: 2023_04_18_143852) do
+
+  create_table "packages", force: :cascade do |t|
+    t.string "item"
+    t.date "arrival_date"
+    t.string "details"
+    t.string "status"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
