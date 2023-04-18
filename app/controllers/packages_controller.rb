@@ -6,6 +6,8 @@ class PackagesController < ApplicationController
 
     @waiting_on = @list_of_packages.where({ :status => "waiting_on" })
 
+    @received = @list_of_packages.where({ :status => "received" })
+
     render({ :template => "packages/index.html.erb" })
   end
 

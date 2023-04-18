@@ -94,3 +94,21 @@
 </div>
 
 <hr>
+
+<div class="received">
+  <h2>Received</h2>
+
+  <ul>
+    <% @received.each do |package| %>
+      <li>
+        <div>
+          <%= package.item %>
+        </div>
+
+        <small>
+          Updated <%= time_ago_in_words(package.updated_at) %> ago <a href="/delete_package/<%= package.id %>">Delete</a>
+        </small>
+      </li>
+    <% end %>
+  </ul>
+</div>
