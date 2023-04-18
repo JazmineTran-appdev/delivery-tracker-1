@@ -27,9 +27,9 @@ class PackagesController < ApplicationController
 
     if the_package.valid?
       the_package.save
-      redirect_to("/packages", { :notice => "Package created successfully." })
+      redirect_to("/", { :notice => "Package created successfully." })
     else
-      redirect_to("/packages", { :alert => the_package.errors.full_messages.to_sentence })
+      redirect_to("/", { :alert => the_package.errors.full_messages.to_sentence })
     end
   end
 
@@ -45,9 +45,9 @@ class PackagesController < ApplicationController
 
     if the_package.valid?
       the_package.save
-      redirect_to("/packages/#{the_package.id}", { :notice => "Package updated successfully."} )
+      redirect_to("/", { :notice => "Package updated successfully."} )
     else
-      redirect_to("/packages/#{the_package.id}", { :alert => the_package.errors.full_messages.to_sentence })
+      redirect_to("/", { :alert => the_package.errors.full_messages.to_sentence })
     end
   end
 
@@ -57,6 +57,6 @@ class PackagesController < ApplicationController
 
     the_package.destroy
 
-    redirect_to("/packages", { :notice => "Package deleted successfully."} )
+    redirect_to("/", { :notice => "Package deleted successfully."} )
   end
 end
