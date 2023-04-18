@@ -31,7 +31,7 @@ class PackagesController < ApplicationController
 
     if the_package.valid?
       the_package.save
-      redirect_to("/", { :notice => "Package created successfully." })
+      redirect_to("/", { :notice => "Added to list" })
     else
       redirect_to("/", { :alert => the_package.errors.full_messages.to_sentence })
     end
